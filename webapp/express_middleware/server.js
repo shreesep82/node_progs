@@ -20,7 +20,9 @@ app.use((req, res, next) => {
   console.log('second middleware');
   if(req.url == '/about') {
     // block this request
-    res.render('some.hbs');
+    res.render('some.hbs', {
+      data : 'data'
+    });
     return;
   }
   next();
